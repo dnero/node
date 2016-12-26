@@ -1,0 +1,24 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnero/node.git"
+  },
+  "author": "D'ontreye Nero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dnero/node/issues"
+  },
+  "homepage": "https://github.com/dnero/node#readme",
+  "dependencies": {
+    "lodash": "^4.17.3",
+    "nodemon": "^1.11.0",
+    "yargs": "^6.5.0"
+  }
+}
