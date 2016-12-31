@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 let app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -14,7 +16,7 @@ app.use( (req, res, next) => {
 
 	console.log(log);
 	fs.appendFile('server.log', log + '\n', (err) => {
-		"use strict";
+		'use strict';
 		if (err) {
 			console.log('Unable to append to server.log...')
 		}
@@ -30,18 +32,18 @@ app.use(express.static(__dirname + '/public'));
 
 // PARTIAL REGISTERS
 hbs.registerHelper('getCurrentYear', () => {
-	"use strict";
+	'use strict';
 	return new Date().getFullYear();
 });
 
 hbs.registerHelper('screamIt', (txt) => {
-	"use strict";
+	'use strict';
 	return txt.toUpperCase();
 });
 
 // ROUTES
 app.get('/', (req, res) => {
-	"use strict";
+	'use strict';
 	res.render('home.hbs', {
 		pageTitle: 'Home page',
 		welcomeMessage: 'Welcome to my house'
@@ -49,20 +51,20 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-	"use strict";
+	'use strict';
 	res.render('about.hbs', {
 		pageTitle: 'About Page'
 	});
 });
 
 app.get('/bad', (req, res) => {
-	"use strict";
+	'use strict';
 	res.send({
 		errorMessage: 'Error handling request'
 	});
 });
 
-app.listen(3000, () => {
-	"use strict";
-	console.log('Server is up on port 3k.')
+app.listen(port, () => {
+	'use strict';
+	console.log(`Server is up on port ${port}...`)
 });
